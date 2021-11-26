@@ -1,0 +1,51 @@
+﻿@using AcademiaIgor.Models
+@model EmpresaModels
+
+@{
+	ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<h4>EmpresaModels</h4>
+<hr />
+<div class="row">
+	<div class="col-md-4">
+		<form asp-action="Index">
+			<div class="form-group">
+				<label for="username">Nome</label>
+				<input type="text" class="form-control" id="Cnpj" asp-for="Nome" placeholder="Nome da empresa" required="">
+				<div class="invalid-feedback">
+					Nome obrigatorio
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="username">NomeFantasia</label>
+				<input type="text" class="form-control" id="Cnpj" asp-for="NomeFantasia" placeholder="NomeFantasia" required="">
+				<div class="invalid-feedback">
+					NomeFantasia obrigatorio
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="username">Cnpj</label>
+				<input type="text" class="form-control" id="Cnpj" asp-for="Cnpj" placeholder="XX. XXX. XXX/0001-XX" required="">
+				<div class="invalid-feedback">
+					Cnpj obrigatorio
+				</div>
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Create" class="btn btn-primary" />
+			</div>
+		</form>
+	</div>
+</div>
+
+<div>
+	<a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+	await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}

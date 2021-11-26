@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<div class="col-md-12">
+        <div class="h-100 p-5 text-white bg-dark rounded-3">
+          <h2>Texto aqui</h2>
+          <p>Texto no fundo.</p>
+          <button class="btn btn-outline-light" type="button" onclick="OnDivClick();">Botão alert</button>
+          <button class="btn btn-outline-light" type="button" onclick="ParaPrivacy();">Privacy via java</button>
+          <a      class="btn btn-outline-light" href="Home/Privacy">privacy via .net</a>
+        </div>
+      </div>
+
+
+<script>
+    function ParaPrivacy(){
+       window.location.href="Home/Privacy";
+    }
+</script>
