@@ -1,4 +1,10 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using academiaigor3.Data;
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<academiaigor3Context>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("academiaigor3Context")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
