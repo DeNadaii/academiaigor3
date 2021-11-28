@@ -70,7 +70,7 @@ namespace academiaigor3.Controllers
                 ModelState.AddModelError("", "Salario inválido");
                 return View();
             }
-            
+
             if (pessoaModel.Salario < 1200)
             {
                 ModelState.AddModelError("", "Salario inválido");
@@ -122,7 +122,6 @@ namespace academiaigor3.Controllers
         public async Task<IActionResult> Edit(int id, [Bind("Codigo,Nome,Email,DataDeNascimento,QuantideDeFilhos,Salario,situação")] PessoaModel pessoaModel)
         {
 
-
             if (id != pessoaModel.Codigo)
             {
                 return NotFound();
@@ -165,9 +164,6 @@ namespace academiaigor3.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(pessoaModel);
-
-
-
         }
 
         //logica pessoa pessoa ativa e desativada 

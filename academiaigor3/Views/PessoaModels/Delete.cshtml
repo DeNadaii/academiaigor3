@@ -47,18 +47,11 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.situação)
         </dd>
-        <dt class="col-sm-10">
-            @if (Html.DisplayTextFor(model => model.situação).Equals("Ativo"))
-            {
-                @Html.DisplayName("Esta pessoa não pode ser deletada pois está ativa")
-                
-            }
-        </dt>
     </dl>
 
     <form asp-action="Delete">
         <input type="hidden" asp-for="Codigo" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> 
+        <input type="submit" value="Delete" class="btn btn-danger" />
         <a class="btn btn-primary" asp-action="Index">Back to List</a>
     </form>
 </div>
