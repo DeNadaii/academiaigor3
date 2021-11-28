@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using AcademiaIgor.Models;
 using academiaigor3.Data;
 
+
 namespace academiaigor3.Controllers
 {
     public class EmpresaModelsController : Controller
