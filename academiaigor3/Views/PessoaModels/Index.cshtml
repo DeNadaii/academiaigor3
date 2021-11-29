@@ -7,7 +7,7 @@
 <h1>Cadastro de Pessoas</h1>
 
 <p>
-    <a class="btn btn-primary" asp-action="Create">Create New</a>
+    <a class="btn btn-primary" asp-action="Create">Cadastrar Novo perfil</a>
 </p>
 <table class="table">
     <thead>
@@ -56,24 +56,26 @@
                     @Html.DisplayFor(modelItem => item.situação)
                 </td>
                 <td>
-                    <a asp-action="AlterarStatus" asp-route-id="@item.Codigo">| Alterar</a>
-                    <a asp-action="Details" asp-route-id="@item.Codigo">| Details</a>
-                    @if (item.situação.Equals("Ativo"))
-                    {
-                        <div class="d-inline" style="color: rgb(150,150,150);"><u>| Delete</u></div>
-                    }
-                    else
-                    {
-                        <a asp-action="Delete" asp-route-id="@item.Codigo">| Delete</a>
-                    }
-                    @if (item.situação.Equals("Desativado"))
-                    {
-                        <div class="d-inline" style="color: rgb(150,150,150);"><u>| Edit</u></div>
-                    }
-                    else
-                    {
-                        <a asp-action="Edit" asp-route-id="@item.Codigo">| Edit</a>
-                    }
+                    <form>
+                        <a class="btn btn-primary" asp-action="AlterarStatus" asp-route-id="@item.Codigo">Alterar</a>
+                        <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Codigo">Detalhes</a>
+                        @if (item.situação.Equals("Ativo"))
+                        {
+                            <div class="btn text-white bg-secondary">Deletar</div>
+                        }
+                        else
+                        {
+                            <a class="btn btn-primary" asp-action="Delete" asp-route-id="@item.Codigo">Deletar</a>
+                        }
+                        @if (item.situação.Equals("Desativado"))
+                        {
+                            <div class="btn text-white bg-secondary">Editar</div>
+                        }
+                        else
+                        {
+                            <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Codigo">Editar</a>
+                        }
+                    </form>
                 </td>
             </tr>
         }

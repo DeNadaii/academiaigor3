@@ -57,13 +57,16 @@ namespace academiaigor3.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Codigo,Nome,NomeFantasia,Cnpj")] EmpresaModels empresaModels)
         {
-            if (ModelState.IsValid)
+            if (empresaModels.Cnpj.ToString().Length == 15) ;
             {
-                _context.Add(empresaModels);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                if (ModelState.IsValid)
+                {
+                    _context.Add(empresaModels);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
+                return View(empresaModels);
             }
-            return View(empresaModels);
         }
 
         // GET: EmpresaModels/Edit/5

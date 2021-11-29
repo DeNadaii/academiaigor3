@@ -3,5 +3,5 @@
 
 // Write your JavaScript code.
 function OnDivClick() {
-    alert('botão pressionado');
+    alert('Exemplo de alert usando javascript');
 }
